@@ -1,94 +1,80 @@
-// import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div style={{
+    //parent div
+    <div 
+    style={{
       display:"flex",
-
     }}>
-      <div style={{
-        height: "100vh",
+       {/* left side div */}
+       <div 
+       style={{
+        flex:"1",
+        height:"100vh",
+        color:"white",
+        display:"flex",
         position:"sticky",
         top:"0px",
-        backgroundColor: "gray",
+        flexDirection:"column",
+        justifyContent:"center",
+        alignItems:"center",
+        backgroundColor:"gray",
+       }}>
+          left Side
+       </div>
+
+     {/* right side div */}
+       <div 
+       style={{
+        flex:"1"
+       }}>
+         
+        <div
+        style={{
+          height:"100vh",
+          backgroundColor:"blue",
+          color:"white",
         display:"flex",
         flexDirection:"column",
         justifyContent:"center",
-        alignContent:"center",
-        color:"white",
-        flex:"1",
-        alignItems:"center"
+        alignItems:"center",
+        }}
+        > child 1</div>
 
-      }}>
-        leftSide
-      </div>
 
-      <div style={{
-        flex:"1"
-      }}>
         <div
-       style={{
-          height: "100vh",
+        style={{
+          height:"100vh",
           backgroundColor:"red",
-          display:"flex",
-          flexDirection:"column",
-          justifyContent:"center",
-          alignContent:"center",
           color:"white",
-          alignItems:"center"
-
-
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:"center",
+        alignItems:"center",
         }}
-        >image1</div>
-        <div
-       style={{
-          height: "100vh",
-          backgroundColor:"blue",
-          display:"flex",
-          flexDirection:"column",
-          justifyContent:"center",
-          alignContent:"center",
-          color:"white",
-          alignItems:"center"
+        > child 2</div>
 
-
-        }}
-        >image2</div>
-        <div
-       style={{
-          height: "100vh",
+       <div
+        style={{
+          height:"100vh",
           backgroundColor:"green",
-          display:"flex",
-          flexDirection:"column",
-          justifyContent:"center",
-          alignContent:"center",
           color:"white",
-          alignItems:"center"
-
-
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:"center",
+        alignItems:"center",
         }}
-        >image3</div>
+        > child 3</div>
 
 
-      </div>
-      </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+
+
+
+       </div>
+
+    </div>
+    
   );
 }
 
