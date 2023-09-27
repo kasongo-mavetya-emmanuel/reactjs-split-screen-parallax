@@ -1,6 +1,30 @@
 import './App.css';
+import img1 from "./assets/car.jpg";
+import img2 from "./assets/town1.jpg";
+import img3 from "./assets/town2.jpg";
+import { useInView } from 'react-intersection-observer';
 
 function App() {
+  const { ref: div1, inView: div1InView} = useInView(
+    {
+      threshold: 0.2,
+  
+    }
+  );
+  const { ref: div2, inView: div2InView } = useInView({
+    threshold: 0.8,
+
+  });
+  const { ref:div3, inView: div3InView } = useInView(
+    {
+      threshold: 0.2,
+  
+    }
+  );
+
+  console.log(div1InView,div2InView,div3InView);
+
+
   return (
     //parent div
     <div 
@@ -21,7 +45,14 @@ function App() {
         alignItems:"center",
         backgroundColor:"gray",
        }}>
-          left Side
+
+        {div1InView && <img src={img1} alt='car' height={'auto'} width={'100%'}/>}
+
+         {div2InView && <img src={img2} alt='town 1'  height={'auto'} width={'100%'}/>}
+
+         {div3InView && <img src={img3} alt='town 2'  height={'auto'} width={'100%'}/>}
+
+
        </div>
 
      {/* right side div */}
@@ -31,6 +62,8 @@ function App() {
        }}>
          
         <div
+        ref={div1}
+
         style={{
           height:"100vh",
           backgroundColor:"blue",
@@ -42,8 +75,8 @@ function App() {
         }}
         > child 1</div>
 
-
-        <div
+       <div
+        ref={div2}
         style={{
           height:"100vh",
           backgroundColor:"red",
@@ -56,6 +89,7 @@ function App() {
         > child 2</div>
 
        <div
+       ref={div3}
         style={{
           height:"100vh",
           backgroundColor:"green",
